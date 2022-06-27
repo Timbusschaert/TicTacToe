@@ -99,7 +99,7 @@ public class TicTacToe {
 		this.board = board;
 	}
 	public Players getPlayers() {
-		return players;
+		return players.getPlayers();
 	}
 	public void setPlayers(Players players) {
 		this.players = players;

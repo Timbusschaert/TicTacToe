@@ -1,0 +1,53 @@
+.StartMenu {
+    display: block;
+    align-items: center;
+   
+}
+.board{
+    align-items: center;
+    display: inline-block;
+    margin: 10px;
+}
+
+.name{
+    height: 25px;
+
+}
+
+.Title {  
+    background-color: #cdc0b0;  
+    color: #000;  
+    padding: 10px;  
+    font-family: Arial;  
+    text-align: center;  
+}
+
+.players {
+    margin: 10px;
+}
+
+.name {
+    margin: 5px;
+}
+
+.startGame {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #000;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+  .startGame:hover {background-color: #acaec0}
+  
+  .startGame:active {
+    background-color:  #acaec0;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
