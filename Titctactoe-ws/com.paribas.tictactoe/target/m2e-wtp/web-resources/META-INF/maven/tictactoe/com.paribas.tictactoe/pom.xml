@@ -9,10 +9,6 @@
 
 	<name>com.paribas.tictactoe</name>
 	<url>http://maven.apache.org</url>
-
-	
-   		
-
 	<dependencies>
 		<!-- Spring core & mvc -->
 		<dependency>
@@ -74,12 +70,12 @@
 	    <dependency>
 	      <groupId>org.springframework.boot</groupId>
 	      <artifactId>spring-boot-starter-web</artifactId>
-	      <version>2.1.7.RELEASE</version>
+	      <version>1.5.13.RELEASE</version>
 	    </dependency>
 	    <dependency>
 	      <groupId>org.springframework.boot</groupId>
 	      <artifactId>spring-boot-starter-web</artifactId>
-	      <version>2.1.7.RELEASE</version>
+	      <version>1.5.13.RELEASE</version>
 	       <scope>test</scope>
 	    </dependency>
     	<dependency>
@@ -118,30 +114,31 @@
 
 	<build>
 		<finalName>com.paribas.tictactoe</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.0.2</version>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-				</configuration>
-      			</plugin>
-
+		 <plugins>
+        <!-- Configuration du plugin de compilation -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.2</version>
+            <configuration>
+                <source>${java.version}</source>
+                <target>${java.version}</target>
+            </configuration>
+        </plugin>
         <!-- Configuration du plugin de génération du war -->
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-war-plugin</artifactId>
+             <version>3.3.1</version>
             <configuration>
                 <failOnMissingWebXml>false</failOnMissingWebXml>
             </configuration>
-  	     </plugin>
-   		</plugins>
+        </plugin>
+    </plugins>
 	</build>
 	<properties>
 		<java.version>1.11</java.version>
-		<spring.version>3.1.0.RELEASE</spring.version>
+		<spring.version>4.1.4.RELEASE</spring.version>
 		<cglib.version>2.2.2</cglib.version>
    		<junit.version>4.12</junit.version>
 	    <hamcrest.version>1.3</hamcrest.version>
@@ -149,8 +146,8 @@
 	    <mockito.version>1.9.5</mockito.version>
 	    <slf4j.version>1.7.9</slf4j.version>
 	    <hsqldb.version>1.8.0.10</hsqldb.version>
-	    <spring.version>4.1.3.RELEASE</spring.version>
 	    <servlet.api.version>3.1.0</servlet.api.version>
 	    <jackson.version>2.4.4</jackson.version>
+	    
 	</properties>
 </project>
