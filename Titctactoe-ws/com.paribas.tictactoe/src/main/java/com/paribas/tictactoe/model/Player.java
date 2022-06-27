@@ -6,7 +6,7 @@ public class Player {
 	
 	
 	public Player(String name, CellValue type) {
-		super();
+		
 		this.name = name;
 		this.type = type;
 	}

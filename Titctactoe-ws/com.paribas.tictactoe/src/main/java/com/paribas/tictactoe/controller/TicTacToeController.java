@@ -25,15 +25,31 @@ public class TicTacToeController {
 			ApiResponse result = new ApiResponse();
 			result.setMessage("Current player : " + game.getPlayers().getCurrentPlayer().getName());
 			result.setBoard(game.getBoard());
-			result.setOver(game.isOver());
+			result.setOver(false);
 			return result;
 		}
 		
 		@RequestMapping(value="/play",method = RequestMethod.POST)
 		@ResponseBody
-		public String playGame(HttpServletResponse response) throws IOException{
+		public ApiResponse playGame(HttpServletResponse response,@RequestBody RequestCell params) throws IOException{
+			ApiResponse result = new ApiResponse();
+			if(game == null ) {
+				result.setMessage("Game has not been set");
+				return result;
+			}
+			if(game.canCurrentPlayerPlay(params.getX(), params.getY())) {
+				result.setBoard(game.getBoard());
+				result.setOver(game.play(params.getX(),params.getY()));
+				result.setMessage("Current player : " + game.getPlayers().getCurrentPlayer().getName());
+					
+			}else {
+				result.setBoard(game.getBoard());
+				result.setOver(game.isOver());
+				result.setMessage("This cell is not empty");
+
+			}
 			
-			return "'";
+			return result;
 		}
 		
 	

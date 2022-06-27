@@ -27,13 +27,13 @@ public class tictactoecontrollertest {
      
     @Test
     public void checkS() throws Exception{
-         mockMvc.perform(MockMvcRequestBuilders.post("/api/start"))
+         mockMvc.perform(MockMvcRequestBuilders.post("/api/start").param("playerOne", "Tim").param("playerTwo", "Tim2"))
                .andExpect(MockMvcResultMatchers.status().isOk());
  
     }
     @Test
     public void checkPlay() throws Exception{
-        mockMvc.perform(MockMvcRequestBuilders.post("/api/play"))
+        mockMvc.perform(MockMvcRequestBuilders.post("/api/play").param("x", "0").param("y", "0"))
                .andExpect(MockMvcResultMatchers.status().isOk());
     }
 
