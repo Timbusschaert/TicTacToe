@@ -104,6 +104,8 @@ public class TicTacToe {
 	public void setPlayers(Players players) {
 		this.players = players;
 	}
-	
+	public boolean canCurrentPlayerPlay(int i, int j) {
+		return board.getCellValue(i, j) == CellValue.EMPTY ;
+	}
 	
 }

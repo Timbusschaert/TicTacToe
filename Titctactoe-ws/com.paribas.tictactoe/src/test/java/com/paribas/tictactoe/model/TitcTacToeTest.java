@@ -76,9 +76,15 @@ public class TitcTacToeTest {
 	
 	@Test
 	public void test08_canCurrentPlayerPlay() {
-		
-		game.canCurrentPlayerPlay(0 , 0);
-		assertEquals(game.isOver(),true);
+		game = new TicTacToe("", "");
+		assertEquals(game.canCurrentPlayerPlay(0,0),true);
+	}
+	
+	@Test
+	public void test09_canCurrentPlayerPlay() {
+		game = new TicTacToe("", "");
+		game.play(0 , 0);
+		assertEquals(game.canCurrentPlayerPlay(0,0),false);
 	}
 	
 }
