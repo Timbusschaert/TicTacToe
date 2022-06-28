@@ -1,6 +1,6 @@
 
 import React, { Component } from "react"
-import "./StartMenu.css"
+import "./Main.css"
 import StartMenu from "./StartMenu";
 import PlayMenu from "./playMenu";
 import { startGame } from "./TicTacToeFetcher";
@@ -11,7 +11,8 @@ class Main  extends Component{
         this.state = {
             message : "",
             matrix :undefined,
-            isStart : false
+            isStart : false,
+            isOver : false
         }
     }
     
@@ -23,13 +24,20 @@ class Main  extends Component{
         this.fetchStart(params)
     }
 
+    restart =  () => {
+        this.setState({
+            isStart : false 
+        })   
+    }
+
     async fetchStart(params){
         const result = await startGame(params)
         if(result !== null){
             this.setState({
                 matrix  : result.board,
                 isStart : true ,
-                message : result.message
+                message : result.message,
+                isOver : result.over
             })
         }
     }
@@ -37,13 +45,13 @@ class Main  extends Component{
     render () {
         let content = (<StartMenu grid={this.state.matrix} click={this.startNewGame}/>)
         if(this.state.isStart === true){
-            console.log(this.state.matrix)
-            content = (<PlayMenu grid={this.state.matrix}/>)
+            content = (<PlayMenu isOver={this.state.isOver} message={this.state.message} grid={this.state.matrix} callback = {this.restart}/>)
         }
         return (
-            <div className="StartMenu">
-                <div className="Title">
-                    <h1>TIC TAC TOE </h1>
+           
+            <div className="Menu">
+                <div className="title">
+                    <h1> TIC TAC TOE </h1>
                 </div>
                 <div className="main">
                     {content}

@@ -13,17 +13,26 @@ class Board extends Component {
 
     getCellValue(name,x,y) {
         if(name === "EMPTY"){
-            return (<div className="cell" onClick={(e) => this.props.callback(x,y)}></div>)
+            return (<div key={""+(3*x+y+1)} className={"cell"+(3*x+y+1)} onClick={(e) => this.callCallback(x,y)
+                    
+               }></div>
+                )
         }else if (name === "CROSS"){
-            return (<div className="cell"><Cross></Cross></div>)
+            return (<div key={""+(3*x+y+1)} className={"cell"+(3*x+y+1)} ><Cross></Cross></div>)
         }
-        return (<div className="cell"><Circle></Circle></div>)
+        return (<div key={""+(3*x+y+1)} className={"cell"+(3*x+y+1)} ><Circle></Circle></div>)
     }
 
+    callCallback =  (x,y) =>{
+        if(!this.props.isOver){
+            this.props.callback(x,y)
+        }
+        
+    }
+    
     getBoard () {
-        if(this.props.grid !== []){
-            const row = this.props.grid.map((row,indexRow) => {
-                let tmp = 0
+        if(this.props.isPlayable){
+            const row = this.props.grid.board.map((row,indexRow) => {
                 const columnDisplay  = row.map((column,indexColumn) => {
                     
                     return (this.getCellValue(column,indexRow,indexColumn))
@@ -36,19 +45,19 @@ class Board extends Component {
            return ( 
                 <div className="grid">
                     <div className="row">
-                        <div className="cell"><Circle></Circle></div>
-                        <div className="cell"><Cross></Cross></div>
-                        <div className="cell"></div>
+                        <div className="cell1"><Circle></Circle></div>
+                        <div className="cell2"><Cross></Cross></div>
+                        <div className="cell3"></div>
                     </div>
                     <div className="row">
-                        <div className="cell"><Cross></Cross></div>
-                        <div className="cell"><Circle></Circle></div>
-                        <div className="cell"></div>
+                        <div className="cell4"><Cross></Cross></div>
+                        <div className="cell5"><Circle></Circle></div>
+                        <div className="cell6"></div>
                     </div>
                     <div className="row">
-                        <div className="cell"></div>
-                        <div className="cell"><Circle></Circle></div>
-                        <div className="cell"></div>
+                        <div className="cell7"></div>
+                        <div className="cell8"><Circle></Circle></div>
+                        <div className="cell9"></div>
                     </div>
                 </div>
                 )

@@ -39,9 +39,19 @@ public class TicTacToeController {
 			}
 			if(game.canCurrentPlayerPlay(params.getX(), params.getY())) {
 				result.setBoard(game.getBoard());
-				result.setOver(game.play(params.getX(),params.getY()));
 				result.setMessage("Current player : " + game.getPlayers().getCurrentPlayer().getName());
-					
+				boolean isOver = game.play(params.getX(),params.getY()); 
+				if(isOver) {
+					if(game.hasCurrentPlayerWin()) {
+						result.setMessage(game.getPlayers().getCurrentPlayer().getName() +" has won !");
+					}else {
+						result.setMessage("The game is a draw!" );
+					}
+				}else {
+					result.setMessage("Current player : " + game.getPlayers().getCurrentPlayer().getName());
+				}
+				result.setOver(isOver);
+
 			}else {
 				result.setBoard(game.getBoard());
 				result.setOver(game.isOver());

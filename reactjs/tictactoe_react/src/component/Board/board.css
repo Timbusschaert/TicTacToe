@@ -3,12 +3,96 @@
    
   }
   .row {
-    display: table-row
+    display: table-row;
   }
-  .cell {
+  
+  .cell1 {
     width: 100px;
     height: 100px;
-    border: 2px solid black;
+      border-bottom-color: black;
+      border-bottom-style: ridge;
+      border-bottom-width: 5px;
     display: table-cell;
   }
+
+  .cell2 {
+    width: 100px;
+    height: 100px;
+      border-right-color: black;
+      border-right-style: ridge;
+      border-right-width: 5px;
+    border-bottom: 
+      5px ridge black;
+      border-bottom-color: black;
+      border-bottom-style: ridge;
+      border-bottom-width: 5px;
+    border-left: 
+    5px ridge black;
+      border-left-color: black;
+      border-left-style: ridge;
+      border-left-width: 5px;
+    display: table-cell;
+  }
+  .cell3 {
+    width: 100px;
+    height: 100px;
+    border-bottom: 5px ridge black;
+      border-bottom-color: black;
+      border-bottom-style: ridge;
+      border-bottom-width: 5px;  
+    display: table-cell;
+  }
+  .cell4 {
+    width: 100px;
+    height: 100px;
+    border-bottom: 
+      5px ridge black;
+      border-bottom-color: black;
+      border-bottom-style: ridge;
+      border-bottom-width: 5px;
+    display: table-cell;
+  }
+
+  .cell5 {
+    width: 100px;
+    height: 100px;
+    border-right: 
+      5px ridge black;
+     
+    border-bottom: 5px ridge black;
+     
+    border-left: 5px ridge black;
+     
+    display: table-cell;
+  }
+  .cell6 {
+    width: 100px;
+    height: 100px;
+    display: table-cell;
+    border-bottom: 
+    5px ridge black;
+  }
+  .cell7 {
+    width: 100px;
+    height: 100px;
+    display: table-cell;
+  }
+  .cell8{
+    width: 100px;
+    height: 100px;
+    border-left-color: black;
+    border-left-style: ridge;
+    border-left-width: 5px;
+    border-right-color: black;
+    border-right-style: ridge;
+    border-right-width: 5px;
+
+    display: table-cell;
+  }
+  .cell9 {
+    width: 100px;
+    height: 100px;
+    display: table-cell;
+  }
+
   

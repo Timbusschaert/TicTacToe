@@ -43,7 +43,7 @@ public class TicTacToe {
 		}
 		return true;
 	}
-	private boolean hasCurrentPlayerWin() {
+	public boolean hasCurrentPlayerWin() {
 		for(int i = 0 ; i < board.getRow() ; i++) {
 			if(hasWinColumn(i) || hasWinRow(i)) {
 				return true ;
@@ -99,7 +99,7 @@ public class TicTacToe {
 		this.board = board;
 	}
 	public Players getPlayers() {
-		return players.getPlayers();
+		return players;
 	}
 	public void setPlayers(Players players) {
 		this.players = players;

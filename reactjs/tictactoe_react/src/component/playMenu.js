@@ -4,6 +4,7 @@ import { Message } from 'primereact/message';
 import Board from "./Board/board"
 import { playGame } from "./TicTacToeFetcher";
 import "./StartMenu.css"
+import { Button } from "primereact/button";
 
 class PlayMenu  extends Component{
     
@@ -11,8 +12,8 @@ class PlayMenu  extends Component{
         super(props)
         this.state = {
             message : this.props.message,
-            matrix : this.props.board,
-            isOver : false
+            matrix : this.props.grid,
+            isOver : this.props.isOver
         }
     }
     
@@ -20,7 +21,7 @@ class PlayMenu  extends Component{
         this.fetchBoard(x,y)
     }
 
-    async fetchtBoard(row,column){
+    async fetchBoard(row,column){
         const params ={
             x : row,
             y : column
@@ -30,7 +31,7 @@ class PlayMenu  extends Component{
             this.setState({
                  matrix :result.board ,
                  message : result.message,
-                 isOver : result.isOver
+                 isOver : result.over
             })
         }
     }
@@ -40,11 +41,17 @@ class PlayMenu  extends Component{
         return (
             <div className="PlayMenu">
                 <div className="board">
-                    <Board grid={this.props.grid} callback={this.fetchtBoard}/>
+                    <Board grid={this.state.matrix} isPlayable={true} isOver={this.state.isOver} callback={this.play}/>
                 </div>
                 <div className="label">                 
                     <Message severity='info' text={this.state.message} className="name"  />
                 </div>
+                {
+                    this.state.isOver === true &&
+                    <div>
+                    <Button className="button" label="Replay ?" onClick={(e) => this.props.callback()}></Button>
+                    </div>
+                }
             </div>
         )
     }

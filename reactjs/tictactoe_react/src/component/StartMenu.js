@@ -8,35 +8,34 @@ class StartMenu  extends Component{
     constructor(props){
         super(props)
         this.state = {
-            players: {
-                playerOne : '',
-                playerTwo : ''
-            },
-            matrix : undefined
+            playerOne : '',
+            playerTwo : '',
+            matrix : []
         }
         this.onNameChangePlayerOne = this.onNameChangePlayerOne.bind(this)
         this.onNameChangePlayerTwo = this.onNameChangePlayerTwo.bind(this)
     }
 
     onNameChangePlayerOne(value){
-        let tmp = this.state.players
-        tmp.playerOne = value 
         this.setState ({
-            players : tmp 
+            playerOne : value 
         })
     }
 
 
-    onNameChangePlayerTwo(value){
-        let tmp = this.state.players
-        tmp.playerTwo = value 
+    onNameChangePlayerTwo(value){        
         this.setState ({
-            players : tmp 
+            playerTwo : value 
         })
     }
 
     click(){
-        this.props.click(this.state.players)
+        const params  = {
+            playerOne : this.state.playerOne,
+            playerTwo : this.state.playerTwo
+
+        }
+        this.props.click(params)
     }
 
     render () {
@@ -44,14 +43,23 @@ class StartMenu  extends Component{
             <div className="StartMenu">
                
                 <div className="board">
-                    <Board grid={this.state.matrix}/>
+                    <Board grid={this.state.matrix} isPlayable={false}/>
+                </div>
+                <div className="name">
+                    Insert players names and start the game ! 
                 </div>
                 <div className="players">
-                    <InputText className="name" value={this.state.playerOne}  placeholder="Player one" onChange={(e) => this.onNameChangePlayerOne(e.value)}/>
-                    <InputText className="name" value={this.state.playerTwo}  placeholder="Player two" onChange={(e) => this.onNameChangePlayerTwo(e.value)}/> 
+                    <div className="player">
+                        <label htmlFor="player1" className="block">Player one</label>
+                        <InputText id="player1" className="input" value={this.state.playerOne}   onChange={(e) => this.onNameChangePlayerOne(e.target.value)}/>
+                    </div>
+                    <div className="player">
+                        <label htmlFor="player2" className="block">Player two</label>
+                        <InputText id="player2" className="input" value={this.state.playerTwo}   onChange={(e) => this.onNameChangePlayerTwo(e.target.value)}/> 
+                    </div>
                 </div>
                 <div className="startButton">
-                    <Button className="startGame" label="Start game !" onClick={(e) => this.click()}  disabled={this.state.players.playerOne === '' || this.state.players.playerTwo === '' }/>
+                    <Button className="button" label=" Start game !" onClick={(e) => this.click()}  disabled={this.state.playerOne === '' || this.state.playerTwo === '' }/>
                 </div>
 
             </div>
