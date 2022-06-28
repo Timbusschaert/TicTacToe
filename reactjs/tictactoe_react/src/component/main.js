@@ -51,7 +51,7 @@ class Main  extends Component{
            
             <div className="Menu">
                 <div className="title">
-                    <h1> TIC TAC TOE </h1>
+                    <div className="tic"><h1>TIC</h1></div> <div className="tac" ><h1>TAC</h1></div><div className="toe"><h1>TOE</h1></div> 
                 </div>
                 <div className="main">
                     {content}

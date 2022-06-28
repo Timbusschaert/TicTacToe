@@ -9,7 +9,6 @@ h1 {
     margin: 0;
     font-family:"Capuche"; 
     font-size: 100px;
-    color: #080808;
     -webkit-transition: all 0.4s ease 0s;
     -o-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
@@ -20,8 +19,20 @@ h1 em {
     font-weight: 600;
 }
 
+.title {  
+    text-align: center;
+    display: inline-flex;
+}
 
-
+.title div{
+    padding: 10px;
+}
+.tic{
+    color: rgba(239,68,67,255);
+}
+.toe{
+    color: rgba(233,179,6,255);
+}
 /* CSS */
 .button {
   font-family: "Open Sans", sans-serif;

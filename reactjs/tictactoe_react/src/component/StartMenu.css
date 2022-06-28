@@ -1,14 +1,13 @@
 
 @font-face {
     font-family: "Capuche";
-    src: url("../img/Capuche.otf") format("opentype"); 
-    
+    src: url("../img/Capuche.otf") format("opentype");   
 }
 .StartMenu {
     display: block;
-    align-items: center;
-   
+    align-items: center; 
 }
+
 .board{
     align-items: center;
     display: inline-block;
@@ -18,23 +17,18 @@
 .name{
     font-family: "Capuche";
     margin: 10px;
-    font-size: 20px;
-}
-
-.Title {  
-    background-color: #cdc0b0;  
-    color: #000;  
-    padding: 10px;  
-    font-family: Arial;  
-    text-align: center;  
+    font-size: 40px;
 }
 
 .players {
-    margin: 10px;
+  
+    display: inline;
+    margin: 20px;
 }
 
 /* CSS */
 .button {
+    margin: 20px;
     font-family: "Capuche";
     font-size: 16px;
     letter-spacing: 2px;
@@ -59,7 +53,7 @@
 
   .player{
     font-family: "Capuche";
-    display: inline;
+    display: inline-grid;
     margin: 10px;
     font-size: 20px;
   }
@@ -88,4 +82,9 @@
 }
 .input:focus {
     outline:none;
+}
+
+body {
+    background: rgba(10,68,101,255);
+    color: #FFFFFF;
 }

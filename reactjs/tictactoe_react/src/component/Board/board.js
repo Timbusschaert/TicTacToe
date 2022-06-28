@@ -13,14 +13,14 @@ class Board extends Component {
 
     getCellValue(name,x,y) {
         if(name === "EMPTY"){
-            return (<div key={""+(3*x+y+1)} className={"cell"+(3*x+y+1)} onClick={(e) => this.callCallback(x,y)
+            return (<div key={""+(3*x+y+1)} className={"cell cell"+(3*x+y+1)} onClick={(e) => this.callCallback(x,y)
                     
                }></div>
                 )
         }else if (name === "CROSS"){
-            return (<div key={""+(3*x+y+1)} className={"cell"+(3*x+y+1)} ><Cross></Cross></div>)
+            return (<div key={""+(3*x+y+1)} className={"cell cell"+(3*x+y+1)} ><Cross></Cross></div>)
         }
-        return (<div key={""+(3*x+y+1)} className={"cell"+(3*x+y+1)} ><Circle></Circle></div>)
+        return (<div key={""+(3*x+y+1)} className={"cell cell"+(3*x+y+1)} ><Circle></Circle></div>)
     }
 
     callCallback =  (x,y) =>{
@@ -45,19 +45,19 @@ class Board extends Component {
            return ( 
                 <div className="grid">
                     <div className="row">
-                        <div className="cell1"><Circle></Circle></div>
-                        <div className="cell2"><Cross></Cross></div>
-                        <div className="cell3"></div>
+                        <div className="cell cell1"><Circle></Circle></div>
+                        <div className="cell cell2"><Cross></Cross></div>
+                        <div className="cell cell3"></div>
                     </div>
                     <div className="row">
-                        <div className="cell4"><Cross></Cross></div>
-                        <div className="cell5"><Circle></Circle></div>
-                        <div className="cell6"></div>
+                        <div className="cell cell4"><Cross></Cross></div>
+                        <div className="cell cell5"><Circle></Circle></div>
+                        <div className="cell cell6"></div>
                     </div>
                     <div className="row">
-                        <div className="cell7"></div>
-                        <div className="cell8"><Circle></Circle></div>
-                        <div className="cell9"></div>
+                        <div className="cell cell7"></div>
+                        <div className="cell cell8"><Circle></Circle></div>
+                        <div className="cell cell9"></div>
                     </div>
                 </div>
                 )

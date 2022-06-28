@@ -4,8 +4,8 @@ import cross from "../../img/cross.png"
 
 const styles = {
     logo: {
-        width: 95,
-        height: 95,
+        width: 130,
+        height: 130,
     }
 };
 

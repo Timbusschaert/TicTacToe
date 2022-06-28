@@ -4,8 +4,8 @@ import circle from "../../img/Red-circle.png"
 
 const styles = {
     logo: {
-        width: 100,
-        height: 100,
+        width: 130,
+        height: 130,
     }
 };
 
