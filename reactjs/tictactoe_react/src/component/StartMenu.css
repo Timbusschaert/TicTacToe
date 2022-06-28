@@ -16,12 +16,11 @@
 
 .name{
     font-family: "Capuche";
-    margin: 10px;
+    margin-top: 50px;
     font-size: 40px;
 }
 
 .players {
-  
     display: inline;
     margin: 20px;
 }
@@ -68,7 +67,7 @@
     }
   }
 
-  .input {
+.input {
     padding: 1px;
     font-size: 20px;
     border-width: 2px;

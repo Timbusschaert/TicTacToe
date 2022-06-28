@@ -22,6 +22,7 @@ h1 em {
 .title {  
     text-align: center;
     display: inline-flex;
+    margin: 30px;
 }
 
 .title div{
