@@ -1,5 +1,9 @@
 package com.paribas.tictactoe.model;
-
+/**
+ * Management of a player
+ * @author timbu
+ *
+ */
 public class Player {
 	private String name ;
 	private CellValue type ;

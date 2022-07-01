@@ -1,5 +1,3 @@
-import { DataTable } from "primereact/datatable"
-import { Column } from "primereact/column"
 import Circle from "./circle"
 import React, { Component } from "react"
 import Cross from "./cross"
@@ -7,13 +5,9 @@ import "./board.css"
 class Board extends Component {
     
 
-    constructor(props){
-        super(props)
-    }
-
     getCellValue(name,x,y) {
         if(name === "EMPTY"){
-            return (<div key={""+(3*x+y+1)} className={"cell cell"+(3*x+y+1)} onClick={(e) => this.callCallback(x,y)
+            return (<div key={""+(3*x+y+1)} className={"cell cell"+(3*x+y+1)+""} onClick={(e) => this.callCallback(x,y)
                     
                }></div>
                 )

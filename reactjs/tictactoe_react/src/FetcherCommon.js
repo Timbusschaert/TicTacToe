@@ -1,5 +1,12 @@
 import axios from 'axios'
 
+
+/**
+ * Post request to the tomcat server
+ * @param {*} url 
+ * @param {*} params 
+ * @returns 
+ */
 export const HttpPost = async (url,params) =>{
     try{
         let response = null

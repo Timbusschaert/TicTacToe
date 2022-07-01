@@ -1,5 +1,10 @@
 package com.paribas.tictactoe.controller;
 
+/**
+ * DTO class for the start() method
+ * @author timbu
+ *
+ */
 public class ReadParam {
 	private String playerOne ;
 	private String playerTwo ;

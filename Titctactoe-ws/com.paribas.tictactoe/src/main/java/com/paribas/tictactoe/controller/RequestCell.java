@@ -1,5 +1,10 @@
 package com.paribas.tictactoe.controller;
 
+/**
+ * DTO Class for the play() method
+ * @author timbu
+ *
+ */
 public class RequestCell {
 	private int x ;
 	private int y ;

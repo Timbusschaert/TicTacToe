@@ -6,7 +6,9 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
@@ -16,14 +18,19 @@ import org.springframework.web.context.WebApplicationContext;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 @WebMvcTest(controllers = TicTacToeController.class)
+@ContextConfiguration(classes = TicTacToeController.class)
+@WebAppConfiguration
 public class tictactoecontrollertest {
+	 @Autowired 
+	 WebApplicationContext webApplicationContext;
+	 
+	 public MockMvc mockMvc;
 
-	@Autowired
-    private WebApplicationContext wac;
-     
-    @Autowired
-    private MockMvc mockMvc;
-    
+	 @Before
+	 public void setUp() {
+		   mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+	 }
+  
      
     @Test
     public void checkS() throws Exception{

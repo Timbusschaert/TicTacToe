@@ -1,9 +1,9 @@
 
 import React, { Component } from "react"
 import "./Main.css"
-import StartMenu from "./StartMenu";
-import PlayMenu from "./playMenu";
-import { startGame } from "./TicTacToeFetcher";
+import StartMenu from "./Menu/StartMenu";
+import PlayMenu from "./Menu/playMenu";
+import { startGame } from "./common/TicTacToeFetcher";
 class Main  extends Component{
     
     constructor(props){
@@ -35,7 +35,7 @@ class Main  extends Component{
         if(result !== null){
             this.setState({
                 matrix  : result.board,
-                isStart : true ,
+                isStart : true,
                 message : result.message,
                 isOver : result.over
             })

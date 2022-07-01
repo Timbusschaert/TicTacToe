@@ -2,6 +2,11 @@ package com.paribas.tictactoe.controller;
 
 import com.paribas.tictactoe.model.Board;
 
+/**
+ * DTO class for the Api response
+ * @author timbu
+ *
+ */
 public class ApiResponse {
 	private String message;
 	private Board board ;

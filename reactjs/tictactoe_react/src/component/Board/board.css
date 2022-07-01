@@ -91,6 +91,7 @@
   
     display: table-cell;
   }
+  
 .clickable:focus{
   border-width: 6px;
 }
